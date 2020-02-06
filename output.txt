@@ -1,0 +1,67 @@
+Base Matrix Used For Processing In Application.
+4       3
+3       1
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Matrix used to multiply against _baseMatrix.
+4       4
+3       4
+
+
+Results of multiplying _multiplyMatrix against _baseMatrix.
+25      28
+15      16
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_copyMatrix before copy operation:
+4       1
+3       2
+
+
+_copyMatrix after copy operation:
+4       3
+3       1
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Matrix used to compare against _baseMatrix:
+1       4
+4       3
+
+
+Does _equalsMatrix equal _baseMatrix? false
+
+
+Does _baseMatrix equal itself? true
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_baseMatrix before scalar multiplication operation:
+4       3
+3       1
+
+Multiply _baseMatrix by: 2
+
+_baseMatrix after scalar multiplication operation:
+8       6
+6       2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_baseMatrix before add operation:
+8       6
+6       2
+
+
+_addMatrix before add operation:
+4       1
+1       3
+
+
+_baseMatrix after add operation:
+12      7
+7       5
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

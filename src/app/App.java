@@ -28,13 +28,18 @@ package app;
 public class App {
 
     /**
-     * <h1>main</h1>
      * 
-     * <p><strong><em>Notes: </em></strong>entry point, no args</p>
+     * @custom.method_name main
      * 
-     * @custom.precondition none 
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
      * 
-     * @custom.postcondition PROGRAM TERMINATED. END OF LINE.
+     * @custom.method_notes entry point, no args
+     * 
+     * @custom.pre_condition none
+     * 
+     * @custom.post_condition PROGRAM TERMINATED. END OF LINE.
+     * 
      */
     public static void main(String[] args) throws Exception {
 
@@ -43,43 +48,51 @@ public class App {
         final int _COLUMNS = 2;
 
         // create base matrix for processing
-        Matrix _bMatrix = new Matrix(_ROWS, _COLUMNS);
-        System.out.println("\nBase Matrix Used For Processing In Application.\n" + _bMatrix.toString());
+        Matrix _baseMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\nBase Matrix Used For Processing In Application.\n" + _baseMatrix.toString());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end base matrix creation
 
         // multiply matrix
-        Matrix _mMatrix = new Matrix(_ROWS, _COLUMNS);
-        System.out.println("\nMatrix used to multiply against _bMatrix.\n" + _mMatrix.toString());
-        System.out.println("\nResults of multiplying _mMatrix against _bMatrix.\n" + _bMatrix.matrixMultiply(_mMatrix));
+        Matrix _multiplyMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\nMatrix used to multiply against _baseMatrix.\n" + _multiplyMatrix.toString());
+        System.out.println("\nResults of multiplying _multiplyMatrix against _baseMatrix.\n" + _baseMatrix.matrixMultiply(_multiplyMatrix));
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end multiply matrix
 
         // copy matrix
-        Matrix _cMatrix = new Matrix(_ROWS, _COLUMNS);
-        System.out.println("\n_cMatrix before copy operation: \n" + _cMatrix.toString());
-        _cMatrix.matrixCopy(_bMatrix);
-        System.out.println("\n_cMatrix after copy operation: \n" + _cMatrix.toString());
+        Matrix _copyMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\n_copyMatrix before copy operation: \n" + _copyMatrix.toString());
+        _copyMatrix.matrixCopy(_baseMatrix);
+        System.out.println("\n_copyMatrix after copy operation: \n" + _copyMatrix.toString());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end copy matrix
 
         // equals matrix
-        Matrix _eMatrix = new Matrix(_ROWS, _COLUMNS);
-        System.out.println("\nMatrix used to compare against _bMatrix:\n" + _eMatrix.toString());
-        System.out.println("\nDoes _eMatrix equal _bMatrix? " + _bMatrix.matrixEquals(_eMatrix) + "\n");
-
-        System.out.println("\nDoes _bMatrix equal itself? " + _bMatrix.matrixEquals(_bMatrix) + "\n");
+        Matrix _equalsMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\nMatrix used to compare against _baseMatrix:\n" + _equalsMatrix.toString());
+        System.out.println("\nDoes _equalsMatrix equal _baseMatrix? " + _baseMatrix.matrixEquals(_equalsMatrix) + "\n");
+        System.out.println("\nDoes _baseMatrix equal itself? " + _baseMatrix.matrixEquals(_baseMatrix) + "\n");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end equals matrix
 
         // scalar multiply
         int _scalarMultiplier = 2;
-        System.out.println("\n _bMatrix before scalar multiplication operation:\n" + _bMatrix.toString());
-        System.out.println("Multiply _bMatrix by: " + _scalarMultiplier);
-        _bMatrix.matrixScalarMultiply(_scalarMultiplier);
-        System.out.println("\n _bMatrix after scalar multiplication operation: \n" + _bMatrix.toString());
+        System.out.println("\n_baseMatrix before scalar multiplication operation:\n" + _baseMatrix.toString());
+        System.out.println("Multiply _baseMatrix by: " + _scalarMultiplier);
+        _baseMatrix.matrixScalarMultiply(_scalarMultiplier);
+        System.out.println("\n_baseMatrix after scalar multiplication operation: \n" + _baseMatrix.toString());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end scalar multiply
+
+        // matrix add
+        Matrix _addMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\n_baseMatrix before add operation:\n" + _baseMatrix.toString());
+        System.out.println("\n_addMatrix before add operation:\n" + _addMatrix.toString());
+        _baseMatrix.matrixAdd(_addMatrix);
+        System.out.println("\n_baseMatrix after add operation:\n" + _baseMatrix.toString());
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        // end matrix add
 
     } // end main
 

@@ -223,8 +223,7 @@ public class Matrix {
      * 
      * @custom.post_condition return a copy of existing matrix
      * 
-     * @param _matrix
-     * @return
+     * @param _matrix the matrix that we will copy too
      */
     public void matrixCopy(Matrix _matrix) {
         
