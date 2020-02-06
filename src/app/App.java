@@ -44,7 +44,6 @@ public class App {
 
         // create base matrix for processing
         Matrix _bMatrix = new Matrix(_ROWS, _COLUMNS);
-
         System.out.println("\nBase Matrix Used For Processing In Application.\n" + _bMatrix.toString());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end base matrix creation
@@ -52,17 +51,26 @@ public class App {
         // multiply matrix
         Matrix _mMatrix = new Matrix(_ROWS, _COLUMNS);
         System.out.println("\nMatrix used to multiply against _bMatrix.\n" + _mMatrix.toString());
-        System.out.println("\nResults of multiplying _mMatrix against _bMatrix.\n" + _bMatrix.multiplyMatrix(_mMatrix));
+        System.out.println("\nResults of multiplying _mMatrix against _bMatrix.\n" + _bMatrix.matrixMultiply(_mMatrix));
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end multiply matrix
 
         // copy matrix
         Matrix _cMatrix = new Matrix(_ROWS, _COLUMNS);
         System.out.println("\n_cMatrix before copy operation\n" + _cMatrix.toString());
-        _cMatrix.copyMatrix(_bMatrix);
+        _cMatrix.matrixCopy(_bMatrix);
         System.out.println("\n_cMatrix after copy operation\n" + _cMatrix.toString());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end copy matrix
+
+        // equals matrix
+        Matrix _eMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\nMatrix used to compare against _bMatrix.\n" + _eMatrix.toString());
+        System.out.println("\nDoes _eMatrix equal _bMatrix? " + _bMatrix.matrixEquals(_eMatrix) + "\n");
+
+        System.out.println("\nDoes _bMatrix equal itself? " + _bMatrix.matrixEquals(_bMatrix) + "\n");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        // end equals matrix
 
     } // end main
 

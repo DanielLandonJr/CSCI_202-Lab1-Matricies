@@ -123,7 +123,7 @@ public class Matrix {
 
     /**
      * 
-     * @custom.method_name addMatrix
+     * @custom.method_name matrixAdd
      * 
      * @custom.author Daniel C. Landon Jr.
      * @custom.date_started 02.05.2020
@@ -137,15 +137,44 @@ public class Matrix {
      * @param _matrixArgs matrix to add to _data matrix
      * @return matrix with added values otherwise echos back supplied matrix from args
      */
-    public Matrix addMatrix(Matrix _matrixArgs) {
+    public Matrix matrixAdd(Matrix _matrixArgs) {
 
         // if we get here there is a problem so echo _matrixArgs
         return _matrixArgs;
-    } // end addMatrix
+    } // end matrixAdd
+
+    public Matrix matrixScalarMultiply(int _numberToMultiply) { 
+        return _matrix;
+    
+    } // end matrixScalarMultiply
 
     /**
      * 
-     * @custom.method_name copyMatrix
+     * @custom.method_name matrixEquals
+     * 
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
+     * 
+     * @custom.method_notes takes a supplied matrix and compares it to this._data
+     * 
+     * @custom.pre_condition this._data must exist
+     * 
+     * @custom.post_condition successfull comparison
+     * 
+     * @param _matrix matrix to compare to this._data
+     * @return true if the match false otherwise
+     */
+    public boolean matrixEquals(Matrix _matrix) {
+
+        boolean _testCondition =  Arrays.equals(this._data, _matrix._data) ?  true : false;
+        
+        return _testCondition; // we get here there was a problem
+
+    } // end matrixEquals
+
+    /**
+     * 
+     * @custom.method_name matrixCopy
      * 
      * @custom.author Daniel C. Landon Jr.
      * @custom.date_started 02.05.2020
@@ -159,7 +188,7 @@ public class Matrix {
      * @param _matrix
      * @return
      */
-    public void copyMatrix(Matrix _matrix) {
+    public void matrixCopy(Matrix _matrix) {
         
         // this works, i can conceptualize it but I cannot explain it.
         // i need to work on this one
@@ -167,11 +196,11 @@ public class Matrix {
             .map((int[] row) -> row.clone())
             .toArray((int length) -> new int[length][]);
 
-    } // end copyMatrix
+    } // end matrixCopy
 
     /**
      * 
-     * @custom.method_name multiplyMatrix
+     * @custom.method_name matrixMultiply
      * 
      * @custom.author Daniel C. Landon Jr.
      * @custom.date_started 02.05.2020
@@ -185,7 +214,7 @@ public class Matrix {
      * @param _m2 matrix to multiply against this._data
      * @return matrix containing multipled matrix, if problem will echo back supplied matrix from args
      */
-    public Matrix multiplyMatrix(Matrix _m2) {
+    public Matrix matrixMultiply(Matrix _m2) {
 
         try {
             
