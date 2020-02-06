@@ -29,7 +29,7 @@
  
     /**
      * 
-     * @custom.method_name main
+     * @custom.method_name METHOD NAME
      * 
      * @custom.author Daniel C. Landon Jr.
      * @custom.date_started DATE STARTED

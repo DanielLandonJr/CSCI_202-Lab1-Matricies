@@ -1,17 +1,38 @@
 package app;
 
+import java.util.Arrays;
+
 /**
- * <h1>Matrix</h1>
  * 
- * <p><strong><em>Notes: </em></strong>This class generates a matrix using a constructor with argumens. It has various methods that can be called to manipulate the matrix</p>
+ * @custom.class_name Matrix
  * 
- * <p><strong>author:</strong> <em>Daniel C. Landon Jr.</em></p>
- * <p><strong>instructor:</strong> <em>Dr. Bob Walsh</em></p>
- * <p><strong>class:</strong> <em>CSCI 202 - Introduction to Software Systems</em></p>
- * <p><strong>date:</strong> <em>01.23.2020</em></p>
+ * @custom.author Daniel C. Landon Jr.
+ * @custom.instructor Dr. Bob Walsh
+ * @custom.course CSCI 202 - Introduction to Software Systems
+ * @custom.date_started 02.05.2020
+ * @custom.date_due 02.06.2020
  * 
- * @author Daniel C. Landon Jr.
- * @version 0.1
+ * @custom.class_notes This class generates a matrix using a constructor with
+ *                     argumens. It has various methods that can be called to
+ *                     manipulate the matrix
+ * 
+ * @custom.pre_condition none
+ * 
+ * @custom.post_condition none
+ * 
+ * @custom.javadoc_tags In order to use @custom.tag_name in javadocs you must
+ *                      include the folloinwing in the command line to generate
+ *                      the docs. This part must be after you have indicated
+ *                      what files to process;
+ * 
+ *                      ' -tag custom.tag_name:a:"tag_name" '
+ * 
+ *                      The first part identifies the tag in the code, the
+ *                      second part in quotes indentifies what will be printed
+ *                      in the javadocs when they are generated. If you do not
+ *                      include this in the command to generate the docs you
+ *                      will get an error/warning.
+ * 
  */
 
 public class Matrix {
@@ -22,13 +43,18 @@ public class Matrix {
     private int[][] _data; // Keanu
 
     /**
-     * <h1>Matrix constructor</h1>
      * 
-     * <p><strong><em>Notes: </em></strong>Constructor that creates the initial matrix</p>
+     * @custom.method_name Matrix constructor
      * 
-     * @custom.precondition create instance of object and supply starting values to create a matrix. 
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
      * 
-     * @custom.postcondition matrix is created
+     * @custom.method_notes Constructor that creates the initial matrix
+     * 
+     * @custom.pre_condition create instance of object and supply starting values to create a matrix. 
+     * 
+     * @custom.post_condition matrix is created
+     * 
      * @param _row the number of rows to create
      * @param _col the number of columns to create
      */
@@ -56,13 +82,17 @@ public class Matrix {
     } // end Matrix constructor
 
     /**
-     * <h1>toString</h1>
      * 
-     * <p><strong><em>Notes: </em></strong>Returns a string that contains the matrice.</p>
+     * @custom.method_name toString
      * 
-     * @custom.precondition matrix must be created
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
      * 
-     * @custom.postcondition string containg the matrix is returned
+     * @custom.method_notes Returns a string that contains the matrice.
+     * 
+     * @custom.pre_condition matrix must be created
+     * 
+     * @custom.post_condition string containing the matrix is returned
      * 
      * @return the matrix in string format
      */
@@ -92,13 +122,17 @@ public class Matrix {
     } // end toString
 
     /**
-     * <h1>addMatrix</h1>
      * 
-     * <p><strong><em>Notes: </em></strong>Takes two matricies and adds them together</p>
+     * @custom.method_name addMatrix
      * 
-     * @custom.precondition two matrix must be supplied
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
      * 
-     * @custom.postcondition return a matrix containing the results of adding two supplied matrix together.
+     * @custom.method_notes Takes two matricies and adds them together
+     * 
+     * @custom.pre_condition two matrix must be supplied
+     * 
+     * @custom.post_condition return a matrix containing the results of adding two supplied matrix together.
      * 
      * @param _matrixArgs matrix to add to _data matrix
      * @return matrix with added values otherwise echos back supplied matrix from args
@@ -111,23 +145,42 @@ public class Matrix {
 
     /**
      * 
+     * @custom.method_name copyMatrix
+     * 
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
+     * 
+     * @custom.method_notes none
+     * 
+     * @custom.pre_condition matrix must be supplied to copy to additionally the default data matrix must also exist
+     * 
+     * @custom.post_condition return a copy of existing matrix
+     * 
      * @param _matrix
      * @return
      */
-    public Matrix copyMatrix(int[] _matrix) {
-
-        return _matrix;
+    public void copyMatrix(Matrix _matrix) {
+        
+        // this works, i can conceptualize it but I cannot explain it.
+        // i need to work on this one
+        this._data = Arrays.stream(_matrix._data)
+            .map((int[] row) -> row.clone())
+            .toArray((int length) -> new int[length][]);
 
     } // end copyMatrix
 
     /**
-     * <h1>multiplyMatrix</h1>
      * 
-     * <p><strong><em>Notes: </em></strong>Takes two Matricies and multiplies them together.</p>
+     * @custom.method_name multiplyMatrix
      * 
-     * @custom.precondition two matrix must be supplied
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
      * 
-     * @custom.postcondition return a matrix containing the results of multiplying two supplied matrix together.
+     * @custom.method_notes takes two matrices and multiplies them together
+     * 
+     * @custom.pre_condition two matrix must be supplied
+     * 
+     * @custom.post_condition return a matrix containing the results of multiplying two supplied matrix together.
      * 
      * @param _m2 matrix to multiply against this._data
      * @return matrix containing multipled matrix, if problem will echo back supplied matrix from args

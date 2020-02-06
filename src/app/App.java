@@ -1,17 +1,28 @@
 package app;
 
 /**
- * <h1>App</h1>
  * 
- * <p><strong><em>Notes: </em></strong>Entry point/clinet for Matrix Class testing</p>
+ * @custom.application_name App
+ * @custom.class_name App
+ *  
+ * @custom.author Daniel C. Landon Jr.
+ * @custom.instructor Dr. Bob Walsh
+ * @custom.course CSCI 202 - Introduction to Software Systems
+ * @custom.date_started 02.05.2020  
+ * @custom.date_due 02.06.2020
  * 
- * <p><strong>author:</strong> <em>Daniel C. Landon Jr.</em></p>
- * <p><strong>instructor:</strong> <em>Dr. Bob Walsh</em></p>
- * <p><strong>class:</strong> <em>CSCI 202 - Introduction to Software Systems</em></p>
- * <p><strong>date:</strong> <em>01.23.2020</em></p>
+ * @custom.class_notes Entry point/clinet for Matrix Class testing
  * 
- * @author Daniel C. Landon Jr.
- * @version 0.1
+ * @custom.pre_condition none
+ * 
+ * @custom.post_condition none
+ * 
+ * @custom.javadoc_tags In order to use @custom.tag_name in javadocs you must include the folloinwing in the command line to generate the docs. This part must be after you have indicated what files to process;
+ * 
+ *  ' -tag custom.tag_name:a:"tag_name" '
+ * 
+ * The first part identifies the tag in the code, the second part in quotes indentifies what will be printed in the javadocs when they are generated. If you do not include this in the command to generate the docs you will get an error/warning.
+ * 
  */
 
 public class App {
@@ -44,6 +55,14 @@ public class App {
         System.out.println("\nResults of multiplying _mMatrix against _bMatrix.\n" + _bMatrix.multiplyMatrix(_mMatrix));
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end multiply matrix
+
+        // copy matrix
+        Matrix _cMatrix = new Matrix(_ROWS, _COLUMNS);
+        System.out.println("\n_cMatrix before copy operation\n" + _cMatrix.toString());
+        _cMatrix.copyMatrix(_bMatrix);
+        System.out.println("\n_cMatrix after copy operation\n" + _cMatrix.toString());
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        // end copy matrix
 
     } // end main
 
