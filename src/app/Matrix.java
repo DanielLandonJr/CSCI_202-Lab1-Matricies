@@ -134,17 +134,55 @@ public class Matrix {
      * 
      * @custom.post_condition return a matrix containing the results of adding two supplied matrix together.
      * 
-     * @param _matrixArgs matrix to add to _data matrix
+     * @param _matrix matrix to add to _data matrix
      * @return matrix with added values otherwise echos back supplied matrix from args
      */
-    public Matrix matrixAdd(Matrix _matrixArgs) {
+    public Matrix matrixAdd(Matrix _matrix) {
+
+        // loop the row
+        for(int _rowLoop = 0; _rowLoop < this._row; _rowLoop++) {
+
+            // loop column
+            for(int _colLoop = 0; _colLoop < this._col; _colLoop++) {
+
+                // do the math
+                this._data[_rowLoop][_colLoop] = this._data[_rowLoop][_colLoop] + _matrix._data[_rowLoop][_colLoop];
+
+            } // end _colLoop
+
+        } // end _rowLoop
 
         // if we get here there is a problem so echo _matrixArgs
-        return _matrixArgs;
+        return _matrix;
     } // end matrixAdd
 
-    public Matrix matrixScalarMultiply(int _numberToMultiply) { 
-        return _matrix;
+    /**
+     * 
+     * @custom.method_name matrixScalarMultiply
+     * 
+     * @custom.author Daniel C. Landon Jr.
+     * @custom.date_started 02.05.2020
+     * 
+     * @custom.method_notes multiples this._data by supplied number
+     * 
+     * @custom.pre_condition this._data must exist
+     * 
+     * @custom.post_condition new matrix containg the multipled values
+     * 
+     * @param _numberToMultiply number to multiply against this._data
+     */
+    public void matrixScalarMultiply(int _numberToMultiply) { 
+
+        for(int _rowLoop = 0; _rowLoop < this._row; _rowLoop++){
+
+            for(int _colLoop = 0; _colLoop < this._col; _colLoop++) {
+
+                // multiply contents of matrix element by multiplier
+                this._data[_rowLoop][_colLoop] = this._data[_rowLoop][_colLoop] * _numberToMultiply;
+
+            } // end _columnLoop
+
+        } // end _rowLoop
     
     } // end matrixScalarMultiply
 

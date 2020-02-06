@@ -57,20 +57,29 @@ public class App {
 
         // copy matrix
         Matrix _cMatrix = new Matrix(_ROWS, _COLUMNS);
-        System.out.println("\n_cMatrix before copy operation\n" + _cMatrix.toString());
+        System.out.println("\n_cMatrix before copy operation: \n" + _cMatrix.toString());
         _cMatrix.matrixCopy(_bMatrix);
-        System.out.println("\n_cMatrix after copy operation\n" + _cMatrix.toString());
+        System.out.println("\n_cMatrix after copy operation: \n" + _cMatrix.toString());
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end copy matrix
 
         // equals matrix
         Matrix _eMatrix = new Matrix(_ROWS, _COLUMNS);
-        System.out.println("\nMatrix used to compare against _bMatrix.\n" + _eMatrix.toString());
+        System.out.println("\nMatrix used to compare against _bMatrix:\n" + _eMatrix.toString());
         System.out.println("\nDoes _eMatrix equal _bMatrix? " + _bMatrix.matrixEquals(_eMatrix) + "\n");
 
         System.out.println("\nDoes _bMatrix equal itself? " + _bMatrix.matrixEquals(_bMatrix) + "\n");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         // end equals matrix
+
+        // scalar multiply
+        int _scalarMultiplier = 2;
+        System.out.println("\n _bMatrix before scalar multiplication operation:\n" + _bMatrix.toString());
+        System.out.println("Multiply _bMatrix by: " + _scalarMultiplier);
+        _bMatrix.matrixScalarMultiply(_scalarMultiplier);
+        System.out.println("\n _bMatrix after scalar multiplication operation: \n" + _bMatrix.toString());
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        // end scalar multiply
 
     } // end main
 
